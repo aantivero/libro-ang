@@ -1,9 +1,18 @@
 /* 
- * Primer Aplicacion 
- * Se agrega un elemento el rootscope para acceder desde la view. 
+ * Primer Aplicacion y Controller
+ * Se modifican los nombres utilizando las mejores prácticas.
  */
-angular.module('miAplicacion',[])
-        .controller('miController', function($scope){
-            $scope.nombre = 'Alejandro';
+var app = angular.module('miApp',[]);
+app.controller('primerCtrl', function($scope){
+    $scope.nombre = "Alejandro";
+});
+app.controller('segundoCtrl', function($scope){
+   $scope.contador = 0;
+   $scope.sumar = function(cantidad){
+     $scope.contador += cantidad;  
+   };
+   $scope.restar = function(cantidad){
+       $scope.contador -= cantidad;
+   };
 });
 
