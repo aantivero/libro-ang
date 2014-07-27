@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="../css/app.css"/>
   <script src="../bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
@@ -22,8 +22,8 @@
     <input type="text" placeholder="Ingrese Nombre" ng-model="nombre">
     <h1>Hola {{nombre}}</h1>    
   </article>
-  <div ng-controller="MiController">
-      <h5>{{clock | date:'medium'}}</h5>
+  <div ng-controller="MiPrimerController">
+      <h5>{{reloj | date:'medium'}}</h5>
   </div>
   
   <!-- In production use:
@@ -31,16 +31,6 @@
   -->
   <script src="../bower_components/angular/angular.js"></script>
   <script src="../bower_components/angular-route/angular-route.js"></script>
-  <script>
-      function MiController($scope){
-        var updateClock = function(){
-          $scope.clock = new Date();  
-        };
-        setInterval(function(){
-            $scope.$apply(updateClock);
-        },1000);
-        updateClock();
-      };
-  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>
