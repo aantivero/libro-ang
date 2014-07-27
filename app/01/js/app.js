@@ -1,13 +1,15 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Primer Controller de la pagina hola.html.
+ * Se considera una buena práctica de Data Binding pasar referencias a la vista
+ * por medio de atributos de un objeto. 
  */
 function MiPrimerController($scope){
-    $scope.reloj = new Date();
+    $scope.reloj = {
+        actual: new Date()
+    };
     
     var updateReloj = function(){
-      $scope.reloj = new Date();  
+      $scope.reloj.actual = new Date();  
     };
     
     setInterval(function(){
