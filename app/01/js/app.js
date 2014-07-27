@@ -4,7 +4,10 @@
  */
 var app = angular.module('miApp',[]);
 app.controller('primerCtrl', function($scope){
-    $scope.nombre = "Alejandro";
+    $scope.persona = {
+        nombre: "Alejandro Antivero",
+        edad: 35
+    };
     $scope.reloj = {
       actual: new Date()  
     };
