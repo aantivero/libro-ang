@@ -1,21 +1,9 @@
 /* 
- * Primer Controller de la pagina hola.html.
- * Se considera una buena práctica de Data Binding pasar referencias a la vista
- * por medio de atributos de un objeto. 
+ * Primer Aplicacion 
+ * Se agrega un elemento el rootscope para acceder desde la view. 
  */
-function MiPrimerController($scope){
-    $scope.reloj = {
-        actual: new Date()
-    };
-    
-    var updateReloj = function(){
-      $scope.reloj.actual = new Date();  
-    };
-    
-    setInterval(function(){
-        $scope.$apply(updateReloj);
-    }, 1000);
-    
-    updateReloj();
-};
+angular.module('miAplicacion',[])
+        .run(function($rootScope){
+            $rootScope.nombre = "Mundo";
+});
 
