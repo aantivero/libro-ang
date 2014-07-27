@@ -3,7 +3,7 @@
  * Se agrega un elemento el rootscope para acceder desde la view. 
  */
 angular.module('miAplicacion',[])
-        .run(function($rootScope){
-            $rootScope.nombre = "Mundo";
+        .controller('miController', function($scope){
+            $scope.nombre = 'Alejandro';
 });
 
