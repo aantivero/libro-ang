@@ -20,7 +20,8 @@
   <![endif]-->
   <article ng-controller="primerCtrl">
     <input type="text" placeholder="Ingrese Nombre" ng-model="nombre">
-    <h1>Hola {{nombre}}</h1>    
+    <h1>Hola {{nombre}}</h1>
+    <span>{{reloj.actual | date:'medium'}}</span>
   </article>
   <div ng-controller="segundoCtrl">
       <h3>Simple Contador</h3>
