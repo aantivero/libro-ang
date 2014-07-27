@@ -3,7 +3,7 @@
  * Se modifican los nombres utilizando las mejores prácticas.
  */
 var app = angular.module('miApp',[]);
-app.controller('primerCtrl', function($scope){
+app.controller('primerController', function($scope){
     $scope.persona = {
         nombre: "Alejandro Antivero",
         edad: 35
@@ -19,7 +19,7 @@ app.controller('primerCtrl', function($scope){
     }, 1000);
     updateReloj();
 });
-app.controller('segundoCtrl', function($scope){
+app.controller('segundoController', function($scope){
    $scope.contador = 0;
    $scope.sumar = function(cantidad){
      $scope.contador += cantidad;  
@@ -31,12 +31,12 @@ app.controller('segundoCtrl', function($scope){
 /*
  * vamos a probar la herencia en los controllers
  */
-app.controller('padreCtrl', function($scope){
+app.controller('padreController', function($scope){
     $scope.usuario = {
         saludar: false
     };
 });
-app.controller('hijoCtrl', function($scope){
+app.controller('hijoController', function($scope){
    $scope.decirHola = function(){
        $scope.usuario.nombre = "Luis Spinetta";
        $scope.usuario.saludar = true;
