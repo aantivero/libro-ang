@@ -28,4 +28,17 @@ app.controller('segundoCtrl', function($scope){
        $scope.contador -= cantidad;
    };
 });
-
+/*
+ * vamos a probar la herencia en los controllers
+ */
+app.controller('padreCtrl', function($scope){
+    $scope.usuario = {
+        saludar: false
+    };
+});
+app.controller('hijoCtrl', function($scope){
+   $scope.decirHola = function(){
+       $scope.usuario.nombre = "Luis Spinetta";
+       $scope.usuario.saludar = true;
+   }; 
+});

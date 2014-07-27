@@ -31,6 +31,13 @@
       <button ng-click="restar(1)" class="button alert">Quitar</button>
       <h3>Valor actual = {{contador}}</h3>
   </div>
+  <br>
+  <div ng-controller="padreCtrl">
+      <div ng-controller="hijoCtrl">
+          <a ng-click="decirHola()">Saludar</a>
+      </div>
+      {{usuario}}
+  </div>
   
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
