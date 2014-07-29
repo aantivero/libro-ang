@@ -1,0 +1,103 @@
+<!doctype html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Filtros</title>
+
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    </head>
+
+    <body>
+        <div class="layout" ng-controller="DemoController">
+            <div class="pure-g">
+                <div class="pure-u-1-3">
+                    <p>{{nombre}}</p>
+                    <p>{{123.456789 | number:2}}</p>
+                </div>
+                <div class="pure-u-1-3">
+                    <h3>Formato Fecha</h3>
+                    <p>{{today|date:'medium'}}</p>
+                    <p>{{today|date:'short'}}</p>
+                    <p>{{today|date:'fullDate'}}</p>
+                    <p>{{today|date:'longDate'}}</p>
+                    <p>{{today|date:'mediumDate'}}</p>
+                    <p>{{today|date:'shortDate'}}</p>
+                    <p>{{today|date:'mediumTime'}}</p>
+                    <p>{{today|date:'shortTime'}}</p>
+                </div>
+                <div class="pure-u-1-3">
+                    <h3>Formato A&ntilde;o</h3>
+                    <p>{{today|date:'yyyy'}}</p>
+                    <p>{{today|date:'yy'}}</p>
+                    <p>{{today|date:'y'}}</p>
+                    <h3>Formato Mes</h3>
+                    <p>{{today|date:'MMMM'}}</p>
+                    <p>{{today|date:'MMM'}}</p>
+                    <p>{{today|date:'MM'}}</p>
+                    <p>{{today|date:'M'}}</p>
+                    <h3>Formato D&iacute;a</h3>
+                    <p>{{today|date:'dd'}}</p>
+                    <p>{{today|date:'EEEE'}}</p>
+                    <p>{{today|date:'EEE'}}</p>
+                </div>
+                <div class="pure-u-1-3">
+                    <h3>Formato Hora</h3>
+                    <p>{{today|date:'HH'}}</p>
+                    <p>{{today|date:'H'}}</p>
+                    <p>{{today|date:'hh'}}</p>
+                    <p>{{today|date:'h'}}</p>
+                    <h3>Formato Minuto</h3>
+                    <p>{{today|date:'mm'}}</p>
+                    <p>{{today|date:'m'}}</p>
+                    <h3>Formato Segundo</h3>
+                    <p>{{today|date:'ss'}}</p>
+                    <p>{{today|date:'s'}}</p>
+                    <p>{{today|date:'.sss'}}</p>
+                </div>
+                <div class="pure-u-1-3">
+                    <h3>Formato Texto</h3>
+                    <p>{{today|date:'a'}}</p>
+                    <p>{{today|date:'Z'}}</p>
+                    <h3>Formato Personalizado</h3>
+                    <p>{{today|date:'MMM d, y'}}</p>
+                    <p>{{today|date:'EEEE, d, M'}}</p>
+                    <p>{{today|date:'HH:mm:ss.sss'}}</p>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <h3>Filtro</h3>
+                    <p>{{['Ariel', 'Lerner', 'Likes', 'To', 'Eat', 'Pizza'] | filter:'e'}}</p>
+                    <p>filtro objetos:{{ [{
+                        'name':'Ari',
+                        'City':'San Francisco',
+                        'favorite food':'Pizza'
+                        }, {
+                        'name':'Nate',
+                        'City':'New York',
+                        'favorite food':'Indian food'
+                        }] | filter:{'favorite food': 'Pizza'}
+                    }}</p>
+                    <p>filtro por function: {{['Ari', 'likes', 'to', 'travel']| filter:isCapitalized}}</p>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1-3">
+                    <h3>JSon</h3>
+                    <p>{{ {'name':'Ari', 'City':'San Francisco'} | json}}</p>
+                </div>
+                <div class="pure-u-1-3">
+                    <h3>Limites</h3>
+                    <p>{{'San Francisco is very cloudy' | limitTo : 3}}</p>
+                    <p>{{'San Francisco is very cloudy' | limitTo : -6}}</p>
+                    <h3>arra</h3>
+                    
+                </div>
+            </div>
+        </div>
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
