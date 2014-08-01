@@ -19,7 +19,13 @@ and open the template in the editor.
         <form name="signup_form" novalidate ng-submit="signupForm()">
             <fieldset>
                 <legend>Ingresar</legend>
-                <button type="submit" class="button radius">Enviar</button>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label>Nombre</label>
+                        <input type="text" placeholder="Nombre" name="name" ng-model="signup.name" ng-minlength=3 ng-maxlength=20 required/>
+                    </div>
+                </div>
+                <button type="submit" class="button radius">Ok</button>
             </fieldset>
         </form>
         <script src="lib/js/jquery.js"></script>
