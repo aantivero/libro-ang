@@ -36,6 +36,26 @@ and open the template in the editor.
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label>Email</label>
+                        <input type="email" placeholder="Email" name="email" ng-model="signup.email" ng-minlength=3 ng-maxlength=20 required/>
+                        <div class="error" ng-show="signup_form.email.$dirty && signup_form.email.$invalid">
+                            <small class="error" ng-show="signup_form.email.$error.required">
+                                Su email es requerido
+                            </small>
+                            <small class="error" ng-show="signup_form.email.$error.minlength">
+                                Su email debe tener al menos 3 caracteres
+                            </small>
+                            <small class="error" ng-show="signup_form.email.$error.email">
+                                El email ingresado no es v&aacute;lido
+                            </small>
+                            <small class="error" ng-show="signup_form.email.$error.maxlength">
+                                El email no puede tener mas de 20 caracteres.
+                            </small>
+                        </div>
+                    </div>
+                </div>
                 <button type="submit" class="button radius">Ok</button>
             </fieldset>
         </form>
