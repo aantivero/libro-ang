@@ -23,6 +23,17 @@ and open the template in the editor.
                     <div class="large-12 columns">
                         <label>Nombre</label>
                         <input type="text" placeholder="Nombre" name="name" ng-model="signup.name" ng-minlength=3 ng-maxlength=20 required/>
+                        <div class="error" ng-show="signup_form.name.$dirty && signup_form.name.$invalid">
+                            <small class="error" ng-show="signup_form.name.$error.required">
+                                El Nombre es requerido
+                            </small>
+                            <small class="error" ng-show="signup_form.name.$error.minlength">
+                                Es necesario ingresar al menos 3 caracteres para el Nombre.
+                            </small>
+                            <small class="error" ng-show="signup_form.name.$error.maxlength">
+                                El Nombre no debe tener mas de 20 caracteres.
+                            </small>
+                        </div>
                     </div>
                 </div>
                 <button type="submit" class="button radius">Ok</button>
