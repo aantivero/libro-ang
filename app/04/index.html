@@ -16,14 +16,14 @@ and open the template in the editor.
         <script src="lib/js/angular.min.js"></script>
     </head>
     <body>
-        <form name="signup_form" novalidate ng-submit="signupForm()">
+        <form name="signup_form" novalidate ng-submit="signupForm()" ng-controller="signupController">
             <fieldset>
                 <legend>Ingresar</legend>
                 <div class="row">
                     <div class="large-12 columns">
                         <label>Nombre</label>
                         <input type="text" placeholder="Nombre" name="name" ng-model="signup.name" ng-minlength=3 ng-maxlength=20 required/>
-                        <div class="error" ng-show="signup_form.name.$dirty && signup_form.name.$invalid">
+                        <div class="error" ng-show="signup_form.name.$dirty && signup_form.name.$invalid && signup_form.submitted">
                             <small class="error" ng-show="signup_form.name.$error.required">
                                 El Nombre es requerido
                             </small>
@@ -40,7 +40,7 @@ and open the template in the editor.
                     <div class="large-12 columns">
                         <label>Email</label>
                         <input type="email" placeholder="Email" name="email" ng-model="signup.email" ng-minlength=3 ng-maxlength=20 required/>
-                        <div class="error" ng-show="signup_form.email.$dirty && signup_form.email.$invalid">
+                        <div class="error" ng-show="signup_form.email.$dirty && signup_form.email.$invalid && signup_form.submitted">
                             <small class="error" ng-show="signup_form.email.$error.required">
                                 Su email es requerido
                             </small>
@@ -62,7 +62,7 @@ and open the template in the editor.
                         <input type="text" placeholder="Nombre de Usuario" 
                                name="username" ng-model="signup.username" 
                                ng-minlength=3 ng-maxlength=20 ensure-unique="username" required/>
-                        <div class="error" ng-show="signup_form.username.$dirty && signup_form.username.$invalid">
+                        <div class="error" ng-show="signup_form.username.$dirty && signup_form.username.$invalid && signup_form.submitted">
                             <small class="error" ng-show="signup_form.username.$error.required">
                                 El Nombre de Usuario es requerido
                             </small>

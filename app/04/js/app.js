@@ -22,5 +22,14 @@ angular.module('validacionApp', [])
                   });
               }
             };
+}).controller('signupController', function($scope){
+    $scope.submitted = false;
+    $scope.signupForm = function(){
+      if($scope.signup_form.$valid){
+          //submit normal
+      } else {
+          $scope.signup_form.submitted = false;
+      } 
+    };
 });
 
