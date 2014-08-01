@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="">
+    <head>
+        <title>Validacion Completa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="lib/css/normalize.css">
+        <link rel="stylesheet" href="lib/css/foundation.min.css">
+        <link rel="stylesheet" href="css/app.css">
+        <script src="lib/js/modernizr.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+    </head>
+    <body>
+        <form name="signup_form" novalidate ng-submit="signupForm()">
+            <fieldset>
+                <legend>Ingresar</legend>
+                <button type="submit" class="button radius">Enviar</button>
+            </fieldset>
+        </form>
+        <script src="lib/js/jquery.js"></script>
+        <script src="lib/js/foundation.min.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
+    </body>
+</html>
